@@ -1,0 +1,11 @@
+CIP=true/false
+ID=11111111A
+PHONE=111111111
+NAME=Jaume
+SURNAME=Garcia
+SURNAME2=Garcia
+MAIL=aaaa@outlook.com
+MAILPASS=aaaaaaaa
+MAILHOST=imap-mail.outlook.com
+MAILPORT=993
+LOCATIONS=Tarragona Reus Barcelona

@@ -1,0 +1,5 @@
+config/
+node_modules/
+*.jar
+.env
+*.zip
