@@ -3,7 +3,7 @@ Aquesta aplicació permet introduir totes les dades de automàticament (requerei
 
 Per fer-ho és necessari:
 
--Baixar el repositori, instal·lar https://nodejs.org (preferiblement l'última versió) i executar la comanda npm install.
+-Baixar el repositori, instal·lar https://nodejs.org (preferiblement l'última versió) i executar la comanda npm install a la carpeta arrel del projecte.
 
 -Omplir l'arxiu .env (example) (s'ha d'eliminar el " (example)" perquè funcioni) amb les dades corrrectes:
 
@@ -38,6 +38,8 @@ Per fer-ho és necessari:
 *Seleccionar el "check"
 
 *Assegurar-se de que a la safata de notificacions del dispositiu hi ha una campana
+
+-Executar la comanda node src/index.js a la carpeta arrel del projecte.
 
 NOTA1: per aconseguir les credencials dels protocols imap i smpt del host s'ha d'utilitzar Google.
 
