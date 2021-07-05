@@ -44,3 +44,11 @@ Per fer-ho és necessari:
 NOTA1: per aconseguir les credencials dels protocols imap i smpt del host s'ha d'utilitzar Google.
 
 NOTA2: per ara només he provat l'aplicació amb un coreu Outlook amb el SSL desactivat a la configuració de l'aplicació. Si pot ser es recomana utilitzar aquest.
+
+# Pròxims canvis
+
+-Poder executar aquesta aplicació cada X temps (preferiblement cada 5-10 minuts).
+
+-Enviament de notificacions per correu si l'aplicació troba un centre disponible inclòs entre els especificats per l'usuari.
+
+-Reservar automàticament en una franja concreta.
