@@ -1,5 +1,5 @@
 # v1.0.0
-Aquesta aplicació permet introduir totes les dades de automàticament (requereix configuració prèvia) a la pàgina https://vacunacovid.catsalut.gencat.cat per poder comprovar la disponibilitat dels punts de vacunació arreu de Catalunya.
+Aquesta aplicació permet introduir totes les dades automàticament (requereix configuració prèvia) a la pàgina https://vacunacovid.catsalut.gencat.cat per poder comprovar la disponibilitat dels punts de vacunació arreu de Catalunya.
 
 Per fer-ho és necessari:
 
