@@ -31,15 +31,15 @@ Per fer-ho és necessari:
 
 -Instal·lar l'aplicació https://play.google.com/store/apps/details?id=com.gawk.smsforwarder en el mateix dispositiu del número indicat anteriorment. Per configurar-la es fa de la manera següent:
 
+* Anar a settings i configurar el servidor de correu des del qual s'envia el correu (no funciona amb l'opció "through our server" perquè codifica el correu a base64 i l'aplicació encara no suporta la descodificació)
+
 * A l'inici de l'aplicació seleccionar el botó "+"
 
 * Introduir el correu
 
-* (opcional) Si l'aplicació diu que requereix configuració addicional tornar a l'inici, settings->via smtp, configurar el correu amb el protocol smtp i tornar al pas 1
-
 * Seleccionar el "check"
 
-* Assegurar-se de que a la safata de notificacions del dispositiu hi ha una campana
+* Assegurar-se de que a la safata de notificacions del dispositiu hi ha una campana (vol dir que s'està executant)
 
 -Executar la comanda node src/index.js a la carpeta arrel del projecte.
 
@@ -81,15 +81,15 @@ Para ello es necesario:
 
 -Instalar la aplicación https://play.google.com/store/apps/details?id=com.gawk.smsforwarder en el mismo dispositivo del número indicado anteriormente. Para configurarla se hace de la manera siguiente:
 
+* Ir a settings y configurar el servidor de correo desde el que se envía el correo (no funciona con la opción "through our server" ya que codifica el correo a base64 y la aplicación aún no soporta la descodificación)
+
 * Al inicio de la aplicación seleccionar el botón "+"
 
 * Introducir el correo
 
-* (Opcional) Si la aplicación dice que requiere configuración adicional volver al inicio, settings-> vía smtp, configurar el correo con el protocolo smtp y volver al paso 1
-
 * Seleccionar el "check"
 
-* Asegurarse de que en la bandeja de notificaciones del dispositivo hay una campana
+* Asegurarse de que en la bandeja de notificaciones del dispositivo hay una campana (quiere decir que se está ejecutando)
 
 -Ejecutar la comanda node src/index.js en la carpeta raíz del proyecto.
 
