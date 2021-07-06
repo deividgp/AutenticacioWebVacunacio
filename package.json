@@ -9,8 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cron": "^1.8.2",
     "dotenv": "^10.0.0",
     "node-imap": "^0.9.6",
+    "prompts": "^2.4.1",
     "puppeteer": "^10.1.0"
   }
 }

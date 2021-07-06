@@ -8,4 +8,4 @@ MAIL=aaaa@outlook.com
 MAILPASS=aaaaaaaa
 MAILHOST=imap-mail.outlook.com
 MAILPORT=993
-LOCATIONS=Tarragona Reus Barcelona
+DELAY=1000

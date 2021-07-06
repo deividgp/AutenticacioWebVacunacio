@@ -1,4 +1,4 @@
-# v1.0.0
+# v1.0.1
 Aquesta aplicació permet introduir totes les dades automàticament (requereix configuració prèvia) a la pàgina https://vacunacovid.catsalut.gencat.cat per poder comprovar la disponibilitat dels punts de vacunació arreu de Catalunya.
 
 Per fer-ho és necessari:
@@ -26,6 +26,8 @@ Per fer-ho és necessari:
 * MAILHOST: el host imap del proveïdor de correu
 
 * MAILPORT: el port del host imap del proveïdor de correu
+
+* DELAY: temmps d'espera entre un click i la resposta (es recomana 1000 per defecte però es pot incrementar segons la velocitat d'internet)
 
 - Instal·lar l'aplicació https://play.google.com/store/apps/details?id=com.gawk.smsforwarder en el mateix dispositiu del número indicat anteriorment. Per configurar-la es fa de la manera següent:
 
