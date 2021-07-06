@@ -29,7 +29,7 @@ Per fer-ho és necessari:
 
 * DELAY: temmps d'espera entre un click i la resposta (es recomana 1000 per defecte però es pot incrementar segons la velocitat d'internet)
 
-- Instal·lar l'aplicació https://play.google.com/store/apps/details?id=com.gawk.smsforwarder en el mateix dispositiu del número indicat anteriorment. Per configurar-la es fa de la manera següent:
+-Instal·lar l'aplicació https://play.google.com/store/apps/details?id=com.gawk.smsforwarder en el mateix dispositiu del número indicat anteriorment. Per configurar-la es fa de la manera següent:
 
 * A l'inici de l'aplicació seleccionar el botó "+"
 
@@ -45,7 +45,7 @@ Per fer-ho és necessari:
 
 NOTA1: per aconseguir les credencials dels protocols imap i smpt del host s'ha d'utilitzar Google.
 
-NOTA2: per ara només he provat l'aplicació amb un coreu Outlook amb el SSL desactivat a la configuració de l'aplicació. Si pot ser es recomana utilitzar aquest.
+NOTA2: aquesta aplicació funciona tant amb l'Outlook com amb Gmail encara que perquè funcioni amb aquest últim cal activar l'accés a aplicacions no segures i desactivar l'autenticació en dos passos.
 
 ----
 
@@ -77,6 +77,8 @@ Para ello es necesario:
 
 * MAILPORT: el puerto del host imap del proveedor de correo
 
+* DELAY: tiempo de espera entre un click y la respuesta (se recomienda 1000 pero se puede incrementar según la velocidad de internet)
+
 -Instalar la aplicación https://play.google.com/store/apps/details?id=com.gawk.smsforwarder en el mismo dispositivo del número indicado anteriormente. Para configurarla se hace de la manera siguiente:
 
 * Al inicio de la aplicación seleccionar el botón "+"
@@ -91,9 +93,9 @@ Para ello es necesario:
 
 -Ejecutar la comanda node src/index.js en la carpeta raíz del proyecto.
 
-Nota1: para conseguir las credenciales de los protocolos IMAP y SMPT del host debe utilizarse Google.
+NOTA1: para conseguir las credenciales de los protocolos IMAP y SMPT del host debe utilizarse Google.
 
-Nota2: por ahora sólo he probado la aplicación con un correo Outlook con el SSL desactivado en la configuración de la aplicación. Si puede ser se recomienda utilizar este.
+NOTA2: esta aplicación funciona tanto con Outlook como con Gmail aunque para que funcione con este último hace falta activar el acceso a aplicaciones no seguras y desactivar la autenticación en dos pasos.
 
 # Pròxims canvis
 

@@ -59,7 +59,7 @@ var imap = new Imap({
                 if(typeof browser != 'undefined' && browser.isConnected()){
                     browser.close();
                 }
-                if(typeof job != 'undefined'){
+                if(job != null){
                     job.stop();
                 }
                 console.log("Goodbye");
