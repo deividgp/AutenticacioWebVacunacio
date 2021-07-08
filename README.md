@@ -31,7 +31,7 @@ Per fer-ho és necessari:
 
 -Instal·lar l'aplicació https://play.google.com/store/apps/details?id=com.gawk.smsforwarder en el mateix dispositiu del número indicat anteriorment. Per configurar-la es fa de la manera següent:
 
-* Anar a settings i configurar el servidor de correu des del qual s'envia el correu (no funciona amb l'opció "through our server" perquè codifica el correu a base64 i l'aplicació encara no suporta la descodificació)
+* Anar a settings i configurar el servidor de correu des del qual s'envia el correu
 
 * A l'inici de l'aplicació seleccionar el botó "+"
 
@@ -41,7 +41,7 @@ Per fer-ho és necessari:
 
 * Assegurar-se de que a la safata de notificacions del dispositiu hi ha una campana (vol dir que s'està executant)
 
--Executar la comanda node src/index.js a la carpeta arrel del projecte.
+-Executar la comanda npm start a la carpeta arrel del projecte.
 
 NOTA1: per aconseguir les credencials dels protocols imap i smpt del host s'ha d'utilitzar Google.
 
@@ -81,7 +81,7 @@ Para ello es necesario:
 
 -Instalar la aplicación https://play.google.com/store/apps/details?id=com.gawk.smsforwarder en el mismo dispositivo del número indicado anteriormente. Para configurarla se hace de la manera siguiente:
 
-* Ir a settings y configurar el servidor de correo desde el que se envía el correo (no funciona con la opción "through our server" ya que codifica el correo a base64 y la aplicación aún no soporta la descodificación)
+* Ir a settings y configurar el servidor de correo desde el que se envía el correo
 
 * Al inicio de la aplicación seleccionar el botón "+"
 
@@ -91,7 +91,7 @@ Para ello es necesario:
 
 * Asegurarse de que en la bandeja de notificaciones del dispositivo hay una campana (quiere decir que se está ejecutando)
 
--Ejecutar la comanda node src/index.js en la carpeta raíz del proyecto.
+-Ejecutar la comanda npm start en la carpeta raíz del proyecto.
 
 NOTA1: para conseguir las credenciales de los protocolos IMAP y SMPT del host debe utilizarse Google.
 

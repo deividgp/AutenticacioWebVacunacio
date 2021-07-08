@@ -149,7 +149,6 @@ async function main(cron) {
                     var f = imap.seq.fetch(box.messages.total, { bodies: ['HEADER.FIELDS (FROM)', 'TEXT'] });
 
                     f.on('message', function (msg, seqno) {
-                        var count = 0;
                         var body = "";
                         var from = "";
                         msg.on('body', function (stream, info) {
@@ -158,58 +157,54 @@ async function main(cron) {
                                 buffer += chunk.toString("utf8");
                             });
                             stream.once('end', async function () {
-                                switch (count) {
-                                    case 0:
-                                        count++;
-                                        //Body comes first
-                                        body = buffer;
-                                        break;
-                                    case 1:
-                                        let sms;
-                                        let start;
-                                        let end;
-                                        //From comes later
-                                        from = buffer;
+                                if(buffer.includes("From:")){
+                                    from = buffer;
+                                }else{
+                                    body = buffer;
+                                }
 
-                                        if (from.includes("SMS forwarder <no-reply-smsforwarder@cofp.ru>")) {
-                                            buffer = Buffer.from(body.split("\n")[13], 'base64');
-                                            body = buffer.toString('utf8');
-                                            start = body.indexOf("cés");
-                                            end = body.indexOf("(", start);
-                                        } else {
-                                            start = body.indexOf("A9s");
+                                if(body != "" && from != ""){
+                                    let sms;
+                                    let start;
+                                    let end;
+                                    
+                                    if (from.includes("SMS forwarder <no-reply-smsforwarder@cofp.ru>")) {
+                                        buffer = Buffer.from(body.split("\n")[13], 'base64');
+                                        body = buffer.toString('utf8');
+                                        start = body.indexOf("cés");
+                                    } else {
+                                        start = body.indexOf("A9s");
+                                    }
+                                    end = body.indexOf("(", start);
+                                    sms = body.slice(start + 4, end - 1);
+                                    input = await page.evaluateHandle(`document.querySelector("body > vaccinapp-app").shadowRoot.querySelector("#pages > vaccinapp-shell").shadowRoot.querySelector("#main-shell-content > appointment-shell").shadowRoot.querySelector("#appointment-shell-content > appointment-sms-code").shadowRoot.querySelector("#code").shadowRoot.querySelector("label > input")`);
+                                    await input.focus();
+                                    await input.type(sms);
+                                    button = await page.evaluateHandle(`document.querySelector("body > vaccinapp-app").shadowRoot.querySelector("#pages > vaccinapp-shell").shadowRoot.querySelector("#main-shell-content > appointment-shell").shadowRoot.querySelector("#appointment-shell-content > appointment-sms-code").shadowRoot.querySelector("#accept-btn").shadowRoot.querySelector("#button")`);
+                                    await button.click();
+                                    await page.waitForTimeout(delay);
+
+                                    if (cron) {
+                                        await page.close();
+                                    }
+
+                                    /*await page.evaluate(async() => {
+                                        let elements = document.querySelector("body > vaccinapp-app").shadowRoot.querySelector("#pages > vaccinapp-shell").shadowRoot.querySelector("#main-shell-content > appointment-shell").shadowRoot.querySelector("#appointment-shell-content > appointment-welcome").shadowRoot.querySelectorAll("#make-appointment-btn");
+                                        
+                                        if(elements.length == 1){
+                                            mail = "No hi ha caps disponibles";
+                                            await elements[0].click();
+                                        }else{
+                                            mail = "Hi ha caps disponibles";
+                                            await elements[1].click();
                                         }
-                                        end = body.indexOf("(", start);
-                                        sms = body.slice(start + 4, end - 1);
-                                        input = await page.evaluateHandle(`document.querySelector("body > vaccinapp-app").shadowRoot.querySelector("#pages > vaccinapp-shell").shadowRoot.querySelector("#main-shell-content > appointment-shell").shadowRoot.querySelector("#appointment-shell-content > appointment-sms-code").shadowRoot.querySelector("#code").shadowRoot.querySelector("label > input")`);
-                                        await input.focus();
-                                        await input.type(sms);
-                                        button = await page.evaluateHandle(`document.querySelector("body > vaccinapp-app").shadowRoot.querySelector("#pages > vaccinapp-shell").shadowRoot.querySelector("#main-shell-content > appointment-shell").shadowRoot.querySelector("#appointment-shell-content > appointment-sms-code").shadowRoot.querySelector("#accept-btn").shadowRoot.querySelector("#button")`);
-                                        await button.click();
-                                        await page.waitForTimeout(delay);
+                                    });
 
-                                        if (cron) {
-                                            await page.close();
-                                        }
+                                    await page.waitForTimeout(delay);
 
-                                        /*await page.evaluate(async() => {
-                                            let elements = document.querySelector("body > vaccinapp-app").shadowRoot.querySelector("#pages > vaccinapp-shell").shadowRoot.querySelector("#main-shell-content > appointment-shell").shadowRoot.querySelector("#appointment-shell-content > appointment-welcome").shadowRoot.querySelectorAll("#make-appointment-btn");
-                                            
-                                            if(elements.length == 1){
-                                                mail = "No hi ha caps disponibles";
-                                                await elements[0].click();
-                                            }else{
-                                                mail = "Hi ha caps disponibles";
-                                                await elements[1].click();
-                                            }
-                                        });
-
-                                        await page.waitForTimeout(delay);
-
-                                        /*CENTRES SELECT*/
-                                        /*document.querySelector("body > vaccinapp-app").shadowRoot.querySelector("#pages > vaccinapp-shell").shadowRoot.querySelector("#main-shell-content > appointment-shell").shadowRoot.querySelector("#appointment-shell-content > appointment-selection").shadowRoot.querySelector("#selection-shell-content > appointment-center-selection").shadowRoot.querySelector("div.container > mwc-select").shadowRoot.querySelector("div > div")
-                                        */
-                                        break;
+                                    /*CENTRES SELECT*/
+                                    /*document.querySelector("body > vaccinapp-app").shadowRoot.querySelector("#pages > vaccinapp-shell").shadowRoot.querySelector("#main-shell-content > appointment-shell").shadowRoot.querySelector("#appointment-shell-content > appointment-selection").shadowRoot.querySelector("#selection-shell-content > appointment-center-selection").shadowRoot.querySelector("div.container > mwc-select").shadowRoot.querySelector("div > div")
+                                    */
                                 }
                             });
                         });

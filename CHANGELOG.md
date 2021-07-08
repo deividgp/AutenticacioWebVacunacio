@@ -5,3 +5,5 @@
 # v1.0.2
 
 - Descodificació de base64 per si es decideix enviar el correu a través del servidor de l'aplicació
+
+- Ara es pot iniciar l'aplicació amb npm start
