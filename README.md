@@ -96,19 +96,3 @@ Para ello es necesario:
 NOTA1: para conseguir las credenciales de los protocolos IMAP y SMPT del host debe utilizarse Google.
 
 NOTA2: esta aplicación funciona tanto con Outlook como con Gmail aunque para que funcione con este último hace falta activar el acceso a aplicaciones no seguras y desactivar la autenticación en dos pasos.
-
-# Pròxims canvis
-
--Poder executar aquesta aplicació cada X temps (preferiblement cada 5-10 minuts).
-
--Enviament de notificacions per correu si l'aplicació troba un centre disponible en una localitat incluïda entre les especificades per l'usuari.
-
--Reservar automàticament en una franja concreta.
-
-# Próximos cambios
-
--Poder ejecutar esta aplicación cada X tiempo (preferiblemente cada 5-10 minutos).
-
--Envío de notificaciones por correo si la aplicación encuentra un centro disponible en una localidad incluida entre las especificadas por el usuario.
-
--Reserva automáticamente en una franja concreta.
